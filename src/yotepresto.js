@@ -101,8 +101,6 @@ const zenfi = new ZenfiSDK({
   ],
 });
 
-window.addEventListener('load', () => {
-  zenfi.fillTargets();
-});
+zenfi.fillTargets();
 
 module.exports = zenfi;
