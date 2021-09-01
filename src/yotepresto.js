@@ -75,7 +75,7 @@ const zenfi = new ZenfiSDK({
         useCoupon.click();
       },
       afterAction: () => {
-        const applyCoupon = document.querySelector('#refcode-button');
+        const applyCoupon = document.querySelector('#refcode-submit');
         applyCoupon.click();
       },
     },
