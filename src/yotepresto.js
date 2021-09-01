@@ -67,6 +67,20 @@ const zenfi = new ZenfiSDK({
       dataKey: 'addressIntNumber',
       selector: '#profile_address_attributes_int_number',
     },
+    {
+      dataKey: 'coupon',
+      selector: '#',
+      beforeAction: () => {
+
+      },
+      afterAction: () => {
+
+      },
+    },
+    {
+      dataKey: 'creditAmount',
+      selector: '#',
+    },
     // Postal code is disabled. Otherwise City and Neighborhood inputs are not shown.
     // {
     //   dataKey: 'addressPostalCode',
@@ -101,6 +115,29 @@ const zenfi = new ZenfiSDK({
   ],
 });
 
-zenfi.fillTargets();
+const storeParam = ({ urlParam, cookieName, cookieExpires }) => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const value = searchParams.get(urlParam) || null;
+  if (!value) return;
+  zenfi.cookies.set(cookieName, value, cookieExpires);
+};
+
+const getValue = ({ cookieName, parser }) => {
+  const value = zenfi.cookies.get(cookieName);
+  if (!value) return null;
+  return parser ? parser(value) : value;
+};
+
+const fillZenfiData = async () => {
+  storeParam({ urlParam: 'coupon', cookieName: 'ytp_coupon', cookieExpires: 1 });
+  storeParam({ urlParam: 'amount', cookieName: 'ytp_amount', cookieExpires: 1 });
+  const coupon = getValue({ cookieName: 'ytp_coupon' });
+  const creditAmount = getValue({ cookieName: 'ytp_amount', parser: (v) => parseInt(v, 10) });
+  await zenfi.fetchData();
+  zenfi.leadInfo = { ...zenfi.leadInfo, coupon, creditAmount };
+  zenfi.fillTargets();
+};
+
+fillZenfiData();
 
 module.exports = zenfi;
