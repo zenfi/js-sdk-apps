@@ -2,7 +2,7 @@ const ZenfiSDK = require('zenfi-sdk');
 
 const zenfi = new ZenfiSDK({
   // eslint-disable-next-line no-restricted-globals
-  cookiesDomain: location.hostname.replace('www.', ''),
+  cookiesDomain: location.hostname.replace('www.', '').replace('mx1.', ''),
   partnerName: 'yotepresto',
   targets: [
     {
@@ -69,17 +69,19 @@ const zenfi = new ZenfiSDK({
     },
     {
       dataKey: 'coupon',
-      selector: '#',
+      selector: '#profile_referenced_code',
       beforeAction: () => {
-
+        const useCoupon = document.querySelector('#refcode-button');
+        useCoupon.click();
       },
       afterAction: () => {
-
+        const applyCoupon = document.querySelector('#refcode-button');
+        applyCoupon.click();
       },
     },
     {
       dataKey: 'creditAmount',
-      selector: '#',
+      selector: '#requisition_loan_information_requested_amount',
     },
     // Postal code is disabled. Otherwise City and Neighborhood inputs are not shown.
     // {
