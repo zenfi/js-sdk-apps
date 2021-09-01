@@ -72,11 +72,11 @@ const zenfi = new ZenfiSDK({
       selector: '#profile_referenced_code',
       beforeAction: () => {
         const useCoupon = document.querySelector('#refcode-button');
-        useCoupon.click();
+        if (useCoupon) useCoupon.click();
       },
       afterAction: () => {
         const applyCoupon = document.querySelector('#refcode-submit');
-        applyCoupon.click();
+        if (applyCoupon) applyCoupon.click();
       },
     },
     {
