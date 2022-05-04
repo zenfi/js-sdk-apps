@@ -141,5 +141,6 @@ const fillZenfiData = async () => {
 };
 
 fillZenfiData();
+zenfi.initPageViewsTracking();
 
 module.exports = zenfi;
