@@ -4585,6 +4585,6 @@ yargs@^16.2.0:
 
 zenfi-sdk@zenfi/js-sdk.git#v1.2.0:
   version "1.2.0"
-  resolved "https://codeload.github.com/zenfi/js-sdk/tar.gz/cc22cbc76d715a6f892e7fec750205106db20b3b"
+  resolved "https://codeload.github.com/zenfi/js-sdk/tar.gz/b17f88ba225df2bcbd93027effab77f36aa29d8a"
   dependencies:
     js-cookie "^2.2.1"
