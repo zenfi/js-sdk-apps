@@ -1,6 +1,6 @@
 {
   "name": "zenfi-sdk-apps",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Implementation of the Zenfi JS SDK for partners",
   "main": "dist/index.js",
   "repository": "https://github.com/zenfi/js-sdk-apps",
@@ -19,7 +19,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "zenfi-sdk": "zenfi/js-sdk.git#v1.2.0"
+    "zenfi-sdk": "zenfi/js-sdk.git#v1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
