@@ -9,7 +9,18 @@ jobs:
   purge-cache:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
+
+    - name: Clear Creditea cache
+      uses: wei/curl@v1
+      with:
+        args: https://purge.jsdelivr.net/gh/zenfi/js-sdk-apps@main/dist/creditea/index.js
+
+    - name: Clear Vexi cache
+      uses: wei/curl@v1
+      with:
+        args: https://purge.jsdelivr.net/gh/zenfi/js-sdk-apps@main/dist/vexi/index.js
+
+    - name: Clear Yotepresto cache
       uses: wei/curl@v1
       with:
         args: https://purge.jsdelivr.net/gh/zenfi/js-sdk-apps@main/dist/yotepresto/index.js
