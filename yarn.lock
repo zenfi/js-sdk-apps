@@ -4583,8 +4583,8 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-zenfi-sdk@zenfi/js-sdk.git#v1.2.1:
-  version "1.2.1"
-  resolved "https://codeload.github.com/zenfi/js-sdk/tar.gz/33389d84f914e495819bfbd4b7ee76789606ce44"
+zenfi-sdk@zenfi/js-sdk.git#v1.3.2:
+  version "1.3.2"
+  resolved "https://codeload.github.com/zenfi/js-sdk/tar.gz/5a774864077c24d5a39eae1f9cde3582c0238e50"
   dependencies:
     js-cookie "^2.2.1"
