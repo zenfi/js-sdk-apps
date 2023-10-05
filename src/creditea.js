@@ -1,4 +1,4 @@
-const ZenfiSDK = require('zenfi-sdk');
+const ZenfiSDK = require('@zenfi/js-sdk');
 
 const triggerChange = ({ element }) => element.dispatchEvent(new Event('input', { bubbles: true }));
 

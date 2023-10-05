@@ -1,4 +1,4 @@
-const ZenfiSDK = require('zenfi-sdk');
+const ZenfiSDK = require('@zenfi/js-sdk');
 
 const zenfi = new ZenfiSDK({
   // eslint-disable-next-line no-restricted-globals
