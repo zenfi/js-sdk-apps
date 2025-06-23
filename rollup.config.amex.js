@@ -1,8 +1,8 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 
 export default {
   input: 'src/amex.js',
@@ -19,7 +19,7 @@ export default {
     commonjs(),
     json(),
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       presets: [
         [
           '@babel/preset-env',
@@ -29,6 +29,9 @@ export default {
             targets: '> 0.25%, not dead',
           },
         ],
+      ],
+      plugins: [
+        '@babel/plugin-transform-runtime',
       ],
     }),
     terser(),
